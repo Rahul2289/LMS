@@ -3,6 +3,7 @@ from commons.login import login
 from config import DEPTS,YEARS,SEMS
 
 def dispaly_admin_options():
+    # print('dispaly_admin_options')
     status = True
     while status:
         print("\n")
@@ -10,14 +11,15 @@ def dispaly_admin_options():
         print("\n")
         choice = int(input("Enter your choice: "))
         if choice == 1:
-            print("Adding Students")
+            print("\n ------ Adding Students ------\n")
             return 1
         elif choice == 2:
-            print("Adding Teachers")
+            print("\n ------ Adding Teachers ------")
+            return 2
         elif choice == 3:
-            print("Adding Books")
+            print("\n ------ Adding Books ------")
         elif choice == 4:
-            print("Adding Admins")
+            print("\n ------  Adding Admins ------")
         elif choice == 5:
             print("LOG OUT")
             status = False
@@ -30,11 +32,8 @@ def dispaly_login_options():
     login_status = None
     selected = None
     while status:
-        print("\n")
-        print("Who are you select any one below ?")
-        print("\n")
-        print("1.ADMIN\n2.STUDENT\n3.TEACHER\n4.TRUN OFF")
-        print("\n")
+        print("\nWho are you select any one below ?")
+        print("\n1.ADMIN\n2.STUDENT\n3.TEACHER\n4.TRUN OFF\n")
         choice = int(input("Enter your choice: "))
         if choice == 1:
            login_status =  login("ADMIN")
@@ -66,11 +65,11 @@ def display_year_details():
     status = True
     while status:
         s_no = 1
-        print("YEAR DETAILS")
+        print("\n**** YEAR DETAILS ****\n")
         for year in YEARS:
             print(f"{s_no}.{year}")
             s_no+=1
-        choise = input("SELECT ANY YEAR")
+        choise = input("\nSELECT ANY YEAR: ")
 
         status = True
         while status:
@@ -86,11 +85,11 @@ def display_sem_details():
     status = True
     while status:
         s_no = 1
-        print("\nSEM DETAILS")
+        print("\n**** SEM DETAILS ****\n")
         for sem in SEMS:
             print(f"{s_no}.{sem}")
             s_no+=1
-        choise = input("SELECT ANY SEMS")
+        choise = input("\nSELECT ANY SEMS: ")
 
         status = True
         while status:
@@ -106,14 +105,14 @@ def dispaly_branch_details():
     status = True
     while status:
         s_no = 1
-        print("\nDEPARTMENT DETAILS")
+        print("\n**** DEPARTMENT DETAILS ****\n")
         for dept in DEPTS:
             print(f"{s_no}.{dept}")
             s_no+=1
         status = True
         while status:
             try:
-                choise = input("SELECT ANY BRANCH")
+                choise = input("\nSELECT ANY BRANCH: ")
                 choise= int(choise)
                 status = False
             except:

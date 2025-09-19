@@ -10,19 +10,19 @@ def check_details(credentials):
         return False
    
 def admin_login():
-    print("\nWELCOME TO ADMIN LOGIN\n")
+    print("\n------ WELCOME TO ADMIN LOGIN ------\n")
     name = input("Enter your name: ")
     password = input("Enter your password: ")
     all_admins = list(zip(LMS["ADMINS"], [name]*len(LMS["ADMINS"]), [password]*len(LMS["ADMINS"]) ))
-    print("--all_admins--",all_admins)
+    # print("--all_admins--",all_admins)
     output = list(filter(check_details,all_admins))
 
     if output:
         status = True
-        print("\n******ADMIN LOGIN IS SCUCESSFULL******")
+        print("\n****** ADMIN LOGIN IS SCUCESSFULL ******")
     else:
         status = False
-        print("\n******ADMIN LOGIN IS FAIL******")
+        print("\n****** ADMIN LOGIN IS FAIL ******")
 
     return status
 

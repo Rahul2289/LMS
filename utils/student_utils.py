@@ -4,21 +4,50 @@ from utils.display_utils import (dispaly_branch_details,display_year_details,dis
 def add_student():
     status = True
     while status:
-        print("="*40)
-        print("STUDENT DETAILS")
-        print("="*40)
-        print("\nBRANCH DETAILS")
+
+        print("="*45)
+        print("\t\tSTUDENT DETAILS")
+        print("="*45)
+
         branch = dispaly_branch_details()
-        print("\nYEAR DETAILS")
         year = display_year_details()
-        print("\nSEM DETAILS")
         sem = display_sem_details()
-        name = input("Enter Student name: ")
+
+        name = input("\nEnter Student name: ")
         password = input("Enter Password: ")
         student = {"name":name,"password":password}
+
         LMS["STUDENTS"][branch][year][sem].append(student)
-        choise = input("Do you want one more student ?(Y/N)")
+        choise = input("\nDo you want one more student ?(Y/N)")
+
         print('LMS--',LMS)
+
+        if choise != 'y':
+            status = False
+
+def add_teacher():
+    status = True
+    while status:
+
+        print("="*45)
+        print("\t\tTEACHER DETAILS")
+        print("="*45)
+
+        branch = dispaly_branch_details()
+        year = display_year_details()
+        sem = display_sem_details()
+
+        name = input("\nEnter Teacher name: ")
+        password = input("Enter Password: ")
+        teacher = {"name":name,"password":password}
+
+        LMS["TEACHERS"][branch][year][sem].append(teacher)
+
+        print('\nLMS--',LMS)
+
+        choise = input("\nDo you want one more Teacher ?(Y/N)")
+
+
         if choise != 'y':
             status = False
 

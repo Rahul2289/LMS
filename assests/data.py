@@ -14,3 +14,10 @@ def initialize_data():
             LMS['STUDENTS'][dept][year] = {}
             for sem in SEMS:
                 LMS['STUDENTS'][dept][year][sem] = []
+    
+    for dept in DEPTS:
+        LMS['TEACHERS'][dept] = {}
+        for year in YEARS:
+            LMS['TEACHERS'][dept][year] = {}
+            for sem in SEMS:
+                LMS['TEACHERS'][dept][year][sem] = []

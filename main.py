@@ -14,11 +14,13 @@ def main():
     """
     Main function is a starting point for LMS
     """
-    print("="*40)
-    print("WElcome to LMS")
-    print("="*40)
+    print('\n')
+    print("="*45)
+    print("\t\tWelcome to LMS")
+    print("="*45)
 
     login_status,turn_off,selected = dispaly_login_options()
+    # print('login_status,turn_off,selected--',login_status,turn_off,selected)
     if turn_off:
         print("\nTurning off software\n")
         return #Scucessfull return
@@ -27,6 +29,7 @@ def main():
         initialize_data()
         if selected == "ADMIN":
             choise = dispaly_admin_options()
+            print("choise--",choise)
             process_request(choise)
         elif selected == "STUDENT":
             dispaly_student_options()
@@ -35,7 +38,9 @@ def main():
 
         status = True
         while status:
+        #    print("\n---- You are logged out now ----")
            login_status,turn_off,selected = dispaly_login_options()
+        #    print('***login_status,turn_off,selected--',login_status,turn_off,selected)
            if turn_off:
              print("\nTurning of software")
              status = False
