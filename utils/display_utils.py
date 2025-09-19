@@ -3,7 +3,6 @@ from commons.login import login
 from config import DEPTS,YEARS,SEMS
 
 def dispaly_admin_options():
-    # print('dispaly_admin_options')
     status = True
     while status:
         print("\n")
@@ -20,9 +19,11 @@ def dispaly_admin_options():
             print("\n ------ Adding Books ------")
         elif choice == 4:
             print("\n ------  Adding Admins ------")
+            return 4
         elif choice == 5:
             print("LOG OUT")
             status = False
+            return 5
         else:
             print("Invalid choice, Try again")
 
@@ -37,8 +38,8 @@ def dispaly_login_options():
         choice = int(input("Enter your choice: "))
         if choice == 1:
            login_status =  login("ADMIN")
-           status = False 
            selected = "ADMIN"
+           status = False 
         elif choice == 2:
            login_status = login("STUDENT")
            selected = "STUDENT"
