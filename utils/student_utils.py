@@ -15,7 +15,7 @@ def add_student():
         sem = display_sem_details()
         name = input("Enter Student name: ")
         password = input("Enter Password: ")
-        student = {"name":name,"password":password,"age":'23'}
+        student = {"name":name,"password":password}
         LMS["STUDENTS"][branch][year][sem].append(student)
         choise = input("Do you want one more student ?(Y/N)")
         print('LMS--',LMS)

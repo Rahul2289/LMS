@@ -110,13 +110,10 @@ def dispaly_branch_details():
         for dept in DEPTS:
             print(f"{s_no}.{dept}")
             s_no+=1
-        # choise = input("SELECT ANY BRANCH")
-
         status = True
         while status:
             try:
                 choise = input("SELECT ANY BRANCH")
-
                 choise= int(choise)
                 status = False
             except:

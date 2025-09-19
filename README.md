@@ -1,2 +1,3 @@
 # Libary Management system
-- library Management system is a software developed for libraries
+- Library Management System (LMS) is a simple Python-based software to manage **Books, Students, Teachers, and Admins** in a library.
+
