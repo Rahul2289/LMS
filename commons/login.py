@@ -27,10 +27,49 @@ def admin_login():
     return status
 
 def student_login():
-    pass
+    status = True
+    print("\n------ WELCOME TO STUDENT LOGIN ------\n")
+    name = input("Enter your name: ")
+    password = input("Enter your password: ")
+    all_students = []
+    for branch in LMS["STUDENTS"]:
+        for year in LMS["STUDENTS"][branch]:
+            for sem in LMS["STUDENTS"][branch][year]:
+                all_students.extend(LMS["STUDENTS"][branch][year][sem])
+    all_students = list(zip(all_students, [name]*len(all_students), [password]*len(all_students) ))
+    # print("--all_students--",all_students)
+    output = list(filter(check_details,all_students))
+    # print("--output--",output)
+    if output:
+        status = True
+        print("\n****** STUDENT LOGIN IS SCUCESSFULL ******")
+    else:
+        status = False
+        print("\n****** STUDENT LOGIN IS FAIL ******")
+    return status
 
 def teacher_login():
-    pass
+    status = True
+    print("\n------ WELCOME TO TEACHER LOGIN ------\n")
+    name = input("Enter your name: ")
+    password = input("Enter your password: ")
+    all_teachers = []
+    for branch in LMS["TEACHERS"]:
+        for year in LMS["TEACHERS"][branch]:
+            for sem in LMS["TEACHERS"][branch][year]:
+                all_teachers.extend(LMS["TEACHERS"][branch][year][sem])
+    all_teachers = list(zip(all_teachers, [name]*len(all_teachers), [password]*len(all_teachers) ))
+    # print("--all_teachers--",all_teachers)
+    output = list(filter(check_details,all_teachers))
+    # print("--output--",output)
+    if output:
+        status = True
+        print("\n****** TEACHER LOGIN IS SCUCESSFULL ******")
+    else:
+        status = False
+        print("\n****** TEACHER LOGIN IS FAIL ******")
+    return status
+    
 
 def login(type_of_login):
     if type_of_login == "ADMIN":

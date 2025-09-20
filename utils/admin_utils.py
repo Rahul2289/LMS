@@ -2,7 +2,7 @@ from assests.data import LMS
 from utils.student_utils import (add_student,add_teacher)
 from utils.display_utils import dispaly_admin_options
 
-def process_request(initial_choice):
+def process_request(initial_choice,selected):
     status = True
     choise = initial_choice
     while status:
@@ -10,8 +10,11 @@ def process_request(initial_choice):
             add_student()
         elif choise == 2:
             add_teacher()
-        elif choise == 4:
-            add_admins()
+        elif choise == 4 :
+            if selected == "ADMIN":
+                add_admins()
+            else:
+                print(f"\nAs you are {selected} you cann't add ADMIN...\n")
         elif choise == 5:
             print("\nLogging out from Admin...\n")
             status = False
