@@ -22,6 +22,14 @@ def initialize_data():
             LMS['TEACHERS'][dept][year] = {}
             for sem in SEMS:
                 LMS['TEACHERS'][dept][year][sem] = []
+    
+    for dept in DEPTS:
+        LMS['BOOKS'][dept] = {}
+        for year in YEARS:
+            LMS['BOOKS'][dept][year] = {}
+            for sem in SEMS:
+                LMS['BOOKS'][dept][year][sem] = []
 
     LMS['STUDENTS']["CSE"]["1-YEAR"]["1-SEM"].append({"name": "rahul", "password": "rahul"})
     LMS['TEACHERS']["CSE"]["1-YEAR"]["1-SEM"].append({"name": "akhil", "password": "akhil"})
+    LMS['BOOKS']["CSE"]["1-YEAR"]["1-SEM"].append({"name": "python", "author": "rahul", "quantity": 1})

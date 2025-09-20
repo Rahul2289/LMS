@@ -50,5 +50,3 @@ def add_teacher():
 
         if choise != 'y':
             status = False
-
-

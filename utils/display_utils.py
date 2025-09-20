@@ -17,6 +17,7 @@ def dispaly_admin_options():
             return 2
         elif choice == 3:
             print("\n ------ Adding Books ------")
+            return 3
         elif choice == 4:
             print("\n ------  Adding Admins ------")
             return 4
@@ -56,11 +57,33 @@ def dispaly_login_options():
             print("\nInvalid choice, Try again")
     return (login_status,turn_off,selected)
 
-def dispaly_student_options():
-    pass
+def dispaly_student_teacher_options():
+    status = True
+    while status:
+        print("\n")
+        print("\n1.View Books\n2.Take Book\n3.Return Book\n4.Logout")
+        print("\n")
+        choice = int(input("Enter your choice: "))
+        if choice == 1:
+            print("\n ------ View Books ------")
+            return 1
+        elif choice == 2:
+            print("\n ------ Take Book ------")
+            return 2
+        elif choice == 3:
+            print("\n ------ Return Book ------")
+            return 3
+        elif choice == 4:
+            print("LOG OUT")
+            status = False
+            return 4
+        else:
+            print("Invalid choice, Try again")
 
-def dispaly_teacher_options():
-    pass
+       
+
+# def dispaly_teacher_options():
+#     pass
 
 def display_year_details():
     status = True

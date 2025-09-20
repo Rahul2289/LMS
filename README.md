@@ -27,15 +27,18 @@ The system provides basic functionalities like login, role-based access, and ses
 ### 2. Teacher
 
 * Login with teacher credentials.
-* Can add Teachers.
-* Can add Books.
+* View Books
+* Take Books
+* Return Books
 * Ability to log out.
 
 ### 3. Student
 
 * Login with student credentials.
 * Can add Students.
-* Can add Books.
+* View Books
+* Take Books
+* Return Books
 * Ability to log out.
 
 ### 4. General
@@ -97,7 +100,7 @@ The system provides basic functionalities like login, role-based access, and ses
         ├── __init__.py
         ├── login.py                # Handles login logic for Admin/Student/Teacher
     └── 📁utils
-        ├── admin_utils.py          # Handles Admin-related actions (add students, teachers, admins)
+        ├── admin_utils.py          # Handles Admin-related actions
         ├── book_utils.py           # (Future) Handle book operations
         ├── display_utils.py        # Handles displaying menus and collecting user input
         ├── student_utils.py        # Handles adding Students and Teachers

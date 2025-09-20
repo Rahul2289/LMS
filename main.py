@@ -8,8 +8,8 @@ sys.path.append('/c/Users/Rahul/innomatics-448/LMS')
 
 from assests.data import initialize_data
 from commons.login import login
-from utils.display_utils import (dispaly_admin_options,dispaly_login_options,dispaly_student_options,dispaly_teacher_options)
-from utils.admin_utils import process_request
+from utils.display_utils import (dispaly_admin_options,dispaly_login_options,dispaly_student_teacher_options)
+from utils.admin_utils import process_request,book_request
 
 def main():
     print('\n')
@@ -38,11 +38,11 @@ def main():
                 choise = dispaly_admin_options()
                 process_request(choise,selected)
             elif selected == "STUDENT":
-                choise = dispaly_student_options()
-                process_request(choise,selected)
+                choise = dispaly_student_teacher_options()
+                book_request(choise,selected)
             elif selected == "TEACHER":
-                choise = dispaly_teacher_options()
-                process_request(choise,selected)
+                choise = dispaly_student_teacher_options()
+                book_request(choise,selected)
         else:
             print("\nUnsuccessful login, Try again later")
 
