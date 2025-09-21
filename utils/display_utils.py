@@ -5,6 +5,7 @@ from config import DEPTS,YEARS,SEMS
 def dispaly_admin_options():
     status = True
     while status:
+        print("\n What Action you want to perform ?")
         print("\n")
         print("1.Adding Students\n2.Adding Teachers\n3.Adding Books\n4.Adding Admins\n5.Logout")
         print("\n")

@@ -35,7 +35,6 @@ The system provides basic functionalities like login, role-based access, and ses
 ### 3. Student
 
 * Login with student credentials.
-* Can add Students.
 * View Books
 * Take Books
 * Return Books
