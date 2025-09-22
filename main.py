@@ -6,7 +6,7 @@ Copy right: 2025@Innomatics
 import sys
 sys.path.append('/c/Users/Rahul/innomatics-448/LMS')
 
-from assests.data import initialize_data
+from assests.data import save_data
 from commons.login import login
 from utils.display_utils import (dispaly_admin_options,dispaly_login_options,dispaly_student_teacher_options)
 from utils.admin_utils import process_request,book_request
@@ -18,19 +18,15 @@ def main():
     print("="*45)
 
     status = True
-    initialize_data() 
 
     while status:
 
-        # print("running main loop")
-        
         login_status, turn_off, selected = dispaly_login_options()
-
-        # print('login_status,turn_off,selected--', login_status, turn_off, selected)
 
         if turn_off:
             print("\nTurning off software\n")
             status = False
+            save_data()
             break
 
         if login_status:
@@ -45,6 +41,7 @@ def main():
                 book_request(choise,selected)
         else:
             print("\nUnsuccessful login, Try again later")
+            save_data()
 
 if __name__ == "__main__":
     main()

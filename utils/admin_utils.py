@@ -1,4 +1,4 @@
-from assests.data import LMS
+from assests.data import LMS,save_data
 from utils.student_utils import (add_student,add_teacher)
 from utils.display_utils import dispaly_admin_options,dispaly_student_teacher_options
 from utils.book_utils import add_books,take_a_book,view_books,return_book
@@ -51,6 +51,7 @@ def add_admins():
         password = input("Enter Password: ")
         admin = {"name":name,"password":password}
         LMS["ADMINS"].append(admin)
+        save_data()
         print("\n---- New Admin added successfully -----")
         choise = input("\nDo you want one more Admin ?(Y/N)")
 
