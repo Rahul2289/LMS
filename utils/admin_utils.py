@@ -1,8 +1,8 @@
 from assests.data import LMS,save_data
-from utils.student_utils import (add_student,add_teacher)
+from utils.student_utils import (add_student,add_teacher,delete_student,update_student,delete_teacher,update_teacher)
 from utils.display_utils import dispaly_admin_options,dispaly_student_teacher_options
-from utils.book_utils import add_books,take_a_book,view_books,return_book
-from libs import print as rich_print,Console,Panel
+from utils.book_utils import add_books,take_a_book,view_books,return_book,delete_book,update_book
+from libs import print as Console,Panel
 
 console = Console()
 
@@ -22,6 +22,24 @@ def process_request(initial_choice,selected):
             print("\nLogging out from Admin...\n")
             status = False
             break
+        elif choise == 6:
+            print("\n ------ Delete Books ------\n")
+            delete_book()
+        elif choise == 7:
+            print("\n ------ Update Books ------\n")
+            update_book()
+        elif choise == 8:
+            print("\n ------ Delete Students ------\n")
+            delete_student()
+        elif choise == 9:
+            print("\n ------ Update Students ------\n")
+            update_student()
+        elif choise == 10:
+            print("\n ------ Delete Teachers ------\n")
+            delete_teacher()
+        elif choise == 11:
+            print("\n ------ Update Teachers ------\n")
+            update_teacher()
         else:
             print("Invalid choice")
 
@@ -56,10 +74,7 @@ def add_admins():
         LMS["ADMINS"].append(admin)
         save_data()
         console.print(Panel.fit("[bold green]New Admin added successfully[/bold green]", title=":tada: Success!", border_style="green",padding=(1, 10)))
-        # print("\n---- New Admin added successfully -----")
         choise = input("\nDo you want one more Admin ?(Y/N)")
-
-        # print('LMS--',LMS)
         
         if choise != 'y':
             status = False

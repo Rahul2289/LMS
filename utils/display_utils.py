@@ -8,7 +8,7 @@ def dispaly_admin_options():
     while status:
         rich_print("\n[bold blue]What Action you want to perform ?")
         print("\n")
-        rich_print("[bold green]1.Adding Students\n2.Adding Teachers\n3.Adding Books\n4.Adding Admins\n5.Logout")
+        rich_print("[bold green]1.Adding Students\n2.Adding Teachers\n3.Adding Books\n4.Adding Admins\n5.Logout\n6.Delete Books\n7.Update Books\n8.Delete students\n9.Update students\n.10.Delete teachers\n11.Update teachers")
         print("\n")
         choice = int(input("Enter your choice: "))
         if choice == 1:
@@ -28,6 +28,25 @@ def dispaly_admin_options():
             print("LOG OUT")
             status = False
             return 5
+        elif choice == 6:
+            # print("\n ------ Delete Books ------")
+            return 6
+        elif choice == 7:
+            # print("\n ------ Update Books ------")
+            return 7
+        elif choice == 8:
+            # print("\n ------ Delete Students ------")
+            return 8
+        elif choice == 9:
+            # print("\n ------ Update Students ------")
+            return 9
+        elif choice == 10:
+            # print("\n ------ Delete Teachers ------")
+            return 10
+        elif choice == 11:
+            # print("\n ------ Update Teachers ------")
+            return 11
+        
         else:
             print("Invalid choice, Try again")
 
@@ -82,11 +101,6 @@ def dispaly_student_teacher_options():
             return 4
         else:
             print("Invalid choice, Try again")
-
-       
-
-# def dispaly_teacher_options():
-#     pass
 
 def display_year_details():
     status = True

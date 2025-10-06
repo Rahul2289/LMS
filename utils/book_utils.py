@@ -141,7 +141,6 @@ def return_book(selected):
         all_books = LMS["BOOKS"][branch][year][sem]
         book_list = list(filter(lambda x: x["name"] == book_name, all_books))
 
-        # Find the student in any branch/year/sem
         student_found = False
         for b in LMS[NAME]:
             for y in LMS[NAME][b]:
@@ -166,5 +165,69 @@ def return_book(selected):
                 print(f"\nBook '{book_name}' not found")
 
         choise = input("\nDo you want to return one more Book ?(Y/N)")
+        if choise.lower() != 'y':
+            status = False
+
+def delete_book():
+    status = True
+    while status:
+        print("\n")
+        console.print(Panel.fit("DELETE BOOK", style="bold orange1", padding=(1, 5)))
+        print("\n")
+        
+        branch = dispaly_branch_details()
+        year = display_year_details()
+        sem = display_sem_details()
+
+        book_name = input("Enter Book name to delete: ")
+
+        all_books = LMS["BOOKS"][branch][year][sem]
+        book_list = list(filter(lambda x: x["name"] == book_name, all_books))
+
+        if book_list:
+            all_books.remove(book_list[0])
+            print(f"\nBook '{book_name}' deleted successfully")
+            save_data()
+        else:
+            print(f"\nBook '{book_name}' not found")
+
+        choise = input("\nDo you want to delete one more Book ?(Y/N)")
+        if choise.lower() != 'y':
+            status = False
+
+def update_book():
+    status = True
+    while status:
+        print("\n")
+        console.print(Panel.fit("UPDATE BOOK", style="bold orange1", padding=(1, 5)))
+        print("\n")
+        
+        branch = dispaly_branch_details()
+        year = display_year_details()
+        sem = display_sem_details()
+
+        book_name = input("Enter Book name to update: ")
+
+        all_books = LMS["BOOKS"][branch][year][sem]
+        book_list = list(filter(lambda x: x["name"] == book_name, all_books))
+
+        if book_list:
+            new_name = input("Enter new Book name (leave blank to keep current): ")
+            new_author = input("Enter new Author name (leave blank to keep current): ")
+            new_quantity = input("Enter new Quantity (leave blank to keep current): ")
+
+            if new_name:
+                book_list[0]["name"] = new_name
+            if new_author:
+                book_list[0]["author"] = new_author
+            if new_quantity.isdigit():
+                book_list[0]["quantity"] = int(new_quantity)
+
+            print(f"\nBook '{book_name}' updated successfully")
+            save_data()
+        else:
+            print(f"\nBook '{book_name}' not found")
+
+        choise = input("\nDo you want to update one more Book ?(Y/N)")
         if choise.lower() != 'y':
             status = False

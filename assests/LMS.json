@@ -30,8 +30,8 @@
                         "password": "sss"
                     },
                     {
-                        "name": "aaa",
-                        "password": "aaa"
+                        "name": "bbb",
+                        "password": "bbb"
                     },
                     {
                         "name": "1",
@@ -46,12 +46,7 @@
             },
             "2-YEAR": {
                 "1-SEM": [],
-                "2-SEM": [
-                    {
-                        "name": "rrr",
-                        "password": "rrr"
-                    }
-                ]
+                "2-SEM": []
             },
             "3-YEAR": {
                 "1-SEM": [],
@@ -187,12 +182,7 @@
             },
             "4-YEAR": {
                 "1-SEM": [],
-                "2-SEM": [
-                    {
-                        "name": "tarun",
-                        "password": "tarun"
-                    }
-                ]
+                "2-SEM": []
             }
         }
     },
@@ -201,9 +191,9 @@
             "1-YEAR": {
                 "1-SEM": [
                     {
-                        "name": "python",
-                        "author": "tarun",
-                        "quantity": 2
+                        "name": "sql",
+                        "author": "rahul",
+                        "quantity": 4
                     }
                 ],
                 "2-SEM": []
@@ -228,13 +218,7 @@
             },
             "2-YEAR": {
                 "1-SEM": [],
-                "2-SEM": [
-                    {
-                        "name": "sql",
-                        "author": "anil",
-                        "quantity": 1
-                    }
-                ]
+                "2-SEM": []
             },
             "3-YEAR": {
                 "1-SEM": [],
