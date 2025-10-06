@@ -1,13 +1,21 @@
-from assests.data import LMS
+from assests.data import LMS,save_data
 from utils.display_utils import (dispaly_branch_details,display_year_details,display_sem_details)
+from libs import print as rich_print,Console,Panel
+
+console = Console()
 
 def add_student():
     status = True
     while status:
-
-        print("="*45)
-        print("\t\tSTUDENT DETAILS")
-        print("="*45)
+        print("\n")
+        console.print(
+            Panel.fit(
+            "[bold orange1]🎓  ADDING STUDENT DETAILS  🎓[/bold orange1]",
+            title="👤 Student Details",
+            border_style="orange1",
+            padding=(1, 5)
+            )
+        )
 
         branch = dispaly_branch_details()
         year = display_year_details()
@@ -18,9 +26,8 @@ def add_student():
         student = {"name":name,"password":password}
 
         LMS["STUDENTS"][branch][year][sem].append(student)
+        save_data()
         choise = input("\nDo you want one more student ?(Y/N)")
-
-        print('LMS--',LMS)
 
         if choise != 'y':
             status = False
@@ -29,9 +36,14 @@ def add_teacher():
     status = True
     while status:
 
-        print("="*45)
-        print("\t\tTEACHER DETAILS")
-        print("="*45)
+        console.print(
+            Panel.fit(
+            "[bold orange1]🎓  ADDING TEACHER DETAILS  🎓[/bold orange1]",
+            title="👤 Teacher Details",
+            border_style="orange1",
+            padding=(1, 5)
+            )
+        )
 
         branch = dispaly_branch_details()
         year = display_year_details()
@@ -42,9 +54,7 @@ def add_teacher():
         teacher = {"name":name,"password":password}
 
         LMS["TEACHERS"][branch][year][sem].append(teacher)
-
-        print('\nLMS--',LMS)
-
+        save_data()
         choise = input("\nDo you want one more Teacher ?(Y/N)")
 
 

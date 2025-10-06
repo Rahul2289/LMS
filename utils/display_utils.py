@@ -1,26 +1,28 @@
 
 from commons.login import login
 from config import DEPTS,YEARS,SEMS
-
+from libs import print as rich_print,Console,Panel
+console = Console()
 def dispaly_admin_options():
     status = True
     while status:
-        print("\n What Action you want to perform ?")
+        rich_print("\n[bold blue]What Action you want to perform ?")
         print("\n")
-        print("1.Adding Students\n2.Adding Teachers\n3.Adding Books\n4.Adding Admins\n5.Logout")
+        rich_print("[bold green]1.Adding Students\n2.Adding Teachers\n3.Adding Books\n4.Adding Admins\n5.Logout")
         print("\n")
         choice = int(input("Enter your choice: "))
         if choice == 1:
-            print("\n ------ Adding Students ------\n")
+            # print("\n ------ Adding Students ------\n")
             return 1
         elif choice == 2:
-            print("\n ------ Adding Teachers ------")
+            # print("\n ------ Adding Teachers ------")
             return 2
         elif choice == 3:
-            print("\n ------ Adding Books ------")
+            # print("\n ------ Adding Books ------")
             return 3
         elif choice == 4:
-            print("\n ------  Adding Admins ------")
+            console.print(Panel.fit("Adding Admins", style="bold orange1", padding=(1, 5)))
+            # print("\n ------  Adding Admins ------")
             return 4
         elif choice == 5:
             print("LOG OUT")
@@ -35,8 +37,8 @@ def dispaly_login_options():
     login_status = None
     selected = None
     while status:
-        print("\nWho are you select any one below ?")
-        print("\n1.ADMIN\n2.STUDENT\n3.TEACHER\n4.TRUN OFF\n")
+        rich_print("\n[bold Green]Who are you select any one below ?")
+        rich_print("\n[bold Blue]1.ADMIN\n2.STUDENT\n3.TEACHER\n4.TRUN OFF\n")
         choice = int(input("Enter your choice: "))
         if choice == 1:
            login_status =  login("ADMIN")
@@ -51,7 +53,7 @@ def dispaly_login_options():
            selected = "TEACHER"
            status = False 
         elif choice == 4:
-            print("\nTRUN OFF")
+            # print("\nTRUN OFF")
             status = False
             turn_off = True
         else:
@@ -62,17 +64,17 @@ def dispaly_student_teacher_options():
     status = True
     while status:
         print("\n")
-        print("\n1.View Books\n2.Take Book\n3.Return Book\n4.Logout")
+        rich_print("\n[bold Blue]1.View Books\n2.Take Book\n3.Return Book\n4.Logout")
         print("\n")
         choice = int(input("Enter your choice: "))
         if choice == 1:
-            print("\n ------ View Books ------")
+            # print("\n ------ View Books ------")
             return 1
         elif choice == 2:
-            print("\n ------ Take Book ------")
+            # print("\n ------ Take Book ------")
             return 2
         elif choice == 3:
-            print("\n ------ Return Book ------")
+            # print("\n ------ Return Book ------")
             return 3
         elif choice == 4:
             print("LOG OUT")
@@ -90,9 +92,9 @@ def display_year_details():
     status = True
     while status:
         s_no = 1
-        print("\n**** YEAR DETAILS ****\n")
+        rich_print("\n[bold Green]**** YEAR DETAILS ****\n")
         for year in YEARS:
-            print(f"{s_no}.{year}")
+            rich_print(f"[bold blue]{s_no}.{year}")
             s_no+=1
         choise = input("\nSELECT ANY YEAR: ")
 
@@ -110,9 +112,9 @@ def display_sem_details():
     status = True
     while status:
         s_no = 1
-        print("\n**** SEM DETAILS ****\n")
+        rich_print("\n[bold Green]**** SEM DETAILS ****\n")
         for sem in SEMS:
-            print(f"{s_no}.{sem}")
+            rich_print(f"[bold blue]{s_no}.{sem}")
             s_no+=1
         choise = input("\nSELECT ANY SEMS: ")
 
@@ -130,9 +132,9 @@ def dispaly_branch_details():
     status = True
     while status:
         s_no = 1
-        print("\n**** DEPARTMENT DETAILS ****\n")
+        rich_print("\n[bold Green]**** DEPARTMENT DETAILS ****\n")
         for dept in DEPTS:
-            print(f"{s_no}.{dept}")
+            rich_print(f"[bold blue]{s_no}.{dept}")
             s_no+=1
         status = True
         while status:

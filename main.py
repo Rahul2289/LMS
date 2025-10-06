@@ -3,19 +3,20 @@ This file is the starting file for Innomatics LMS project
 Author: burrarahulgoud1999@gmail.com
 Copy right: 2025@Innomatics
 """
+
 import sys
 sys.path.append('/c/Users/Rahul/innomatics-448/LMS')
 
+from libs import print as rich_print,Console,Panel
+
 from assests.data import save_data
-from commons.login import login
 from utils.display_utils import (dispaly_admin_options,dispaly_login_options,dispaly_student_teacher_options)
 from utils.admin_utils import process_request,book_request
 
 def main():
     print('\n')
-    print("="*45)
-    print("\t\tWelcome to LMS")
-    print("="*45)
+    console = Console()
+    console.print(Panel.fit("Welcome to LMS", style="bold orange1", padding=(1, 10)))
 
     status = True
 
@@ -24,7 +25,7 @@ def main():
         login_status, turn_off, selected = dispaly_login_options()
 
         if turn_off:
-            print("\nTurning off software\n")
+            console.print("\n[bold orange1]Turning off software[/bold orange1]\n")
             status = False
             save_data()
             break
@@ -40,7 +41,7 @@ def main():
                 choise = dispaly_student_teacher_options()
                 book_request(choise,selected)
         else:
-            print("\nUnsuccessful login, Try again later")
+            console.print("\nUnsuccessful login, Try again later", style="bold red")
             save_data()
 
 if __name__ == "__main__":

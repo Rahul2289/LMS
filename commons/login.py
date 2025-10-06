@@ -1,34 +1,47 @@
 from assests.data import LMS
+from rich.console import Console
+from rich.panel import Panel
+import assests.data as data
+
+console = Console()
 
 def check_details(credentials):
     admin = credentials[0]
     name = credentials[1]
     password = credentials[2]
     if admin['name'] == name and admin['password'] == password:
+        data.LOGIN_NAME = name
         return True
     else:
         return False
    
 def admin_login():
-    print("\n------ WELCOME TO ADMIN LOGIN ------\n")
+
+    print("\n")
+    console.print(Panel.fit("WELCOME TO ADMIN LOGIN", style="bold orange1", padding=(1, 5), subtitle=":lock: Secure Access :lock:"))
+    print("\n")
+
     name = input("Enter your name: ")
     password = input("Enter your password: ")
     all_admins = list(zip(LMS["ADMINS"], [name]*len(LMS["ADMINS"]), [password]*len(LMS["ADMINS"]) ))
-    # print("--all_admins--",all_admins)
     output = list(filter(check_details,all_admins))
 
     if output:
         status = True
-        print("\n****** ADMIN LOGIN IS SCUCESSFULL ******")
+        print("\n")
+        console.print(Panel.fit("[bold green]ADMIN LOGIN IS SUCCESSFUL[/bold green]", title=":tada: Success!", border_style="green",padding=(1, 10)))
     else:
         status = False
-        print("\n****** ADMIN LOGIN IS FAIL ******")
+        print("\n")
+        console.print(Panel.fit("[bold red]ADMIN LOGIN IS FAIL[/bold red]", title=":x: Error", border_style="red",padding=(1, 5)))
 
     return status
 
 def student_login():
     status = True
-    print("\n------ WELCOME TO STUDENT LOGIN ------\n")
+    print("\n")
+    console.print(Panel.fit("WELCOME TO STUDENT LOGIN", style="bold orange1", padding=(1, 10)))
+    print("\n")
     name = input("Enter your name: ")
     password = input("Enter your password: ")
     all_students = []
@@ -42,15 +55,15 @@ def student_login():
     # print("--output--",output)
     if output:
         status = True
-        print("\n****** STUDENT LOGIN IS SCUCESSFULL ******")
+        console.print(Panel.fit("[bold green]STUDENT LOGIN IS SUCCESSFUL[/bold green]", title=":tada: Success!", border_style="green",padding=(1, 10)))
     else:
         status = False
-        print("\n****** STUDENT LOGIN IS FAIL ******")
+        console.print(Panel.fit("[bold red]STUDENT LOGIN IS FAIL[/bold red]", title=":x: Error", border_style="red",padding=(1, 5)))
     return status
 
 def teacher_login():
     status = True
-    print("\n------ WELCOME TO TEACHER LOGIN ------\n")
+    console.print(Panel.fit("WELCOME TO TEACHER LOGIN", style="bold orange1", padding=(1, 10)))
     name = input("Enter your name: ")
     password = input("Enter your password: ")
     all_teachers = []
@@ -64,10 +77,11 @@ def teacher_login():
     # print("--output--",output)
     if output:
         status = True
-        print("\n****** TEACHER LOGIN IS SCUCESSFULL ******")
+        console.print(Panel.fit("[bold green]TEACHER LOGIN IS SUCCESSFUL[/bold green]", title=":tada: Success!", border_style="green",padding=(1, 10)))
     else:
         status = False
-        print("\n****** TEACHER LOGIN IS FAIL ******")
+        console.print(Panel.fit("[bold red]TEACHER LOGIN IS FAIL[/bold red]", title=":x: Error", border_style="red",padding=(1, 5)))
+
     return status
     
 

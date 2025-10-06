@@ -2,6 +2,9 @@ from assests.data import LMS,save_data
 from utils.student_utils import (add_student,add_teacher)
 from utils.display_utils import dispaly_admin_options,dispaly_student_teacher_options
 from utils.book_utils import add_books,take_a_book,view_books,return_book
+from libs import print as rich_print,Console,Panel
+
+console = Console()
 
 def process_request(initial_choice,selected):
     status = True
@@ -52,10 +55,11 @@ def add_admins():
         admin = {"name":name,"password":password}
         LMS["ADMINS"].append(admin)
         save_data()
-        print("\n---- New Admin added successfully -----")
+        console.print(Panel.fit("[bold green]New Admin added successfully[/bold green]", title=":tada: Success!", border_style="green",padding=(1, 10)))
+        # print("\n---- New Admin added successfully -----")
         choise = input("\nDo you want one more Admin ?(Y/N)")
 
-        print('LMS--',LMS)
+        # print('LMS--',LMS)
         
         if choise != 'y':
             status = False
