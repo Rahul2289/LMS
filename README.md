@@ -22,6 +22,12 @@ The system provides basic functionalities like login, role-based access, and ses
 * Can add Students.
 * Can add Teachers.
 * Can add Books.
+* Can Update Students.
+* Can Update Teachers.
+* Can Update Books.
+* Can Delete Students.
+* Can Delete Teachers.
+* Can Delete Books.
 * Ability to log out.
 
 ### 2. Teacher

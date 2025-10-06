@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS Flow Diagram - Library Management System</title>
+    <meta name="description" content="Interactive flowchart visualization of the Library Management System menu structure and navigation flow">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 LMS Flow Diagram</h1>
+            <p>Library Management System - Interactive Flowchart</p>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color legend-start"></div>
+                <span>Start/Main</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-admin"></div>
+                <span>Admin</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-student"></div>
+                <span>Student</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-teacher"></div>
+                <span>Teacher</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-end"></div>
+                <span>Exit/Logout</span>
+            </div>
+        </div>
+
+        <div class="flowchart" id="flowchart">
+            <!-- Flowchart will be generated here by JavaScript -->
+        </div>
+
+        <div class="info-panel">
+            <h2>System Features Overview</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>👨‍💼 Admin Capabilities</h3>
+                    <ul>
+                        <li>Add new Admins</li>
+                        <li>Add Students & Teachers</li>
+                        <li>Add Books to library</li>
+                        <li>Update Student records</li>
+                        <li>Update Teacher records</li>
+                        <li>Update Book information</li>
+                        <li>Delete Students</li>
+                        <li>Delete Teachers</li>
+                        <li>Delete Books</li>
+                        <li>Secure logout</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>👨‍🎓 Student Access</h3>
+                    <ul>
+                        <li>Secure login system</li>
+                        <li>View available books</li>
+                        <li>Borrow books</li>
+                        <li>Return borrowed books</li>
+                        <li>Session management</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>👨‍🏫 Teacher Access</h3>
+                    <ul>
+                        <li>Secure login system</li>
+                        <li>Browse book catalog</li>
+                        <li>Check out books</li>
+                        <li>Return books</li>
+                        <li>Role-based permissions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
