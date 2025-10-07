@@ -8,7 +8,7 @@ def dispaly_admin_options():
     while status:
         rich_print("\n[bold blue]What Action you want to perform ?")
         print("\n")
-        rich_print("[bold green]1.Adding Students\n2.Adding Teachers\n3.Adding Books\n4.Adding Admins\n5.Logout\n6.Delete Books\n7.Update Books\n8.Delete students\n9.Update students\n.10.Delete teachers\n11.Update teachers")
+        rich_print("[bold green]1.Adding Students\n2.Adding Teachers\n3.Adding Books\n4.Adding Admins\n5.Logout\n6.Delete Books\n7.Update Books\n8.Delete students\n9.Update students\n10.Delete teachers\n11.Update teachers")
         print("\n")
         choice = int(input("Enter your choice: "))
         if choice == 1:

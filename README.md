@@ -129,6 +129,10 @@ python main.py
 
 ---
 
+## Flow chart
+
+* [https://lmsflowchart.netlify.app/](https://lmsflowchart.netlify.app/)
+
 ## 👨‍💻 Author
 
 * Developed by **Rahul Goud** ✨
