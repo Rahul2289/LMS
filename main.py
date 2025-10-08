@@ -4,8 +4,9 @@ Author: burrarahulgoud1999@gmail.com
 Copy right: 2025@Innomatics
 """
 
-import sys
-sys.path.append('/c/Users/Rahul/innomatics-448/LMS')
+import sys,os
+# sys.path.append('/c/Users/Rahul/innomatics-448/LMS')
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from libs import print as rich_print,Console,Panel
 
